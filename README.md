@@ -148,6 +148,16 @@ This alteration to the `update_user_meta_data` function sets it to execute with 
 ALTER FUNCTION update_user_meta_data() SECURITY DEFINER;
 ```
 
+## Trigger `update_user_meta_data_trigger`
+
+```sql
+CREATE TRIGGER update_user_meta_data_trigger
+AFTER UPDATE OF role ON public.users
+FOR EACH ROW
+WHEN (OLD.role IS DISTINCT FROM NEW.role)
+EXECUTE FUNCTION update_user_meta_data();
+```
+
 ## Conclusion
 
 This script facilitates the effective management of user roles in a PostgreSQL database, ensuring that user role changes are accurately reflected and included in JWTs for authenticated sessions in Supabase environments.
