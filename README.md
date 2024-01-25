@@ -3,6 +3,9 @@
 
 This README documents a PostgreSQL script designed for automatic synchronization of user data and implementation of Role-Based Access Control (RBAC) in a database, particularly suitable for Supabase environments. The script includes the creation of a custom role type, a users table, and various functions and triggers to manage user data and roles.
 
+This repository is a bit too complicated for my usecase. [supabase-custom-claims]([https://link-url-here.org](https://github.com/supabase-community/supabase-custom-claims))
+
+
 # PostgreSQL Database Script for User Management in Supabase Environment
 
 This script is designed for use with a PostgreSQL database, particularly in a Supabase environment. It facilitates automatic data synchronization and Role-Based Access Control (RBAC) implementation for user management.
