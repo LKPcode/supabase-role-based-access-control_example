@@ -65,5 +65,11 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+CREATE TRIGGER update_user_meta_data_trigger
+AFTER UPDATE OF role ON public.users
+FOR EACH ROW
+WHEN (OLD.role IS DISTINCT FROM NEW.role)
+EXECUTE FUNCTION update_user_meta_data();
+
 -- Alter the security definition of the update_user_meta_data function
 ALTER FUNCTION update_user_meta_data() SECURITY DEFINER;
